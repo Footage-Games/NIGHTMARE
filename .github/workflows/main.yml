@@ -23,5 +23,5 @@ jobs:
     - name: Upload game
       uses: actions/upload-artifact@v2
       with:
-        name: my-game
-        path: game.apk
+        name: debug
+        path: exports/android/debug.apk
