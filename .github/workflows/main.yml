@@ -21,7 +21,7 @@ jobs:
       run: pip install -r requirements.txt
       
     - name: Upload game
-      uses: actions/upload-artifact@v2
+      uses: actions/upload-release-asset
       with:
         name: debug
         path: exports/android/debug.apk
