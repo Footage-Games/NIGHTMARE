@@ -21,7 +21,7 @@ jobs:
       run: pip install -r requirements.txt
       
     - name: Upload game
-      uses: actions/upload-release-asset
+      uses: actions/upload-release-asset@v1
       with:
         name: debug
-        path: owner/repo@ref
+        path: debug.apk
