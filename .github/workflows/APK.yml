@@ -23,10 +23,10 @@ jobs:
     - name: Create directory
       run: |
         mkdir ~/DebugAPK
-        mkdir BetaVersion
+        mkdir Beta
     
     - name: Upload game
       uses: actions/upload-artifact@v2
       with:
         name: debug lol
-        path: ~/DebugAPK/BetaVersion
+        path: ~/DebugAPK/Beta
