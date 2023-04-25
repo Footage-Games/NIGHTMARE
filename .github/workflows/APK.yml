@@ -23,5 +23,5 @@ jobs:
     - name: Upload game
       uses: actions/upload-artifact@v2
       with:
-        name: debug lol
-        path: ./
+        name: debug
+        path: ./debug.apk
