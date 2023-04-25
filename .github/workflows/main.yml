@@ -1,0 +1,35 @@
+name: BUILD-SHIT
+
+on:
+  push:
+    branches:
+      - main
+  release:
+    types: [created]
+
+jobs:
+  build-and-release:
+    runs-on: ubuntu-latest
+
+    steps:
+    - uses: actions/checkout@v2
+
+    - name: Set up Python
+      uses: actions/setup-python@v2
+      with:
+        python-version: '3.9'
+
+    - name: Install dependencies
+      run: pip install -r requirements.txt
+      
+    - name: Create Tag
+      if: contains(github.ref, 'refs/tags/')
+      run: git tag ${{ github.ref }}
+
+    - name: Upload Release Asset
+      if: contains(github.ref, 'refs/tags/')
+      uses: actions/upload-release-asset@v1
+      with:
+        asset_path: app/build/outputs/apk/debug/app-debug.apk
+        asset_name: app-debug.apk
+        asset_content_type: application/vnd.android.package-archive
