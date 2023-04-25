@@ -21,10 +21,10 @@ jobs:
       run: pip install -r requirements.txt
       
     - name: Create directory
-      run: mkdir ~/DebugAPK && cd ~/DebugAPK
+      run: mkdir ~/DebugAPK
     
     - name: Upload game
       uses: actions/upload-artifact@v2
       with:
-        name: debug.apk
-        path: ~/DebugAPK/
+        name: debug lol
+        path: ~/DebugAPK/debug.apk
