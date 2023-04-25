@@ -24,7 +24,7 @@ jobs:
       
     - name: Create Tag
       if: contains(github.ref, 'refs/tags/')
-      run: git tag ${{ github.ref }}
+      run: git tag $release-{{ github.ref }} 'release-'
 
     - name: Upload Release Asset
       if: contains(github.ref, 'refs/tags/')
