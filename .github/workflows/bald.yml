@@ -28,6 +28,11 @@ jobs:
     - name: Create Tag
       if: contains(github.ref, 'refs/releases')
       run: git tag $release-{{ github.ref }} 'release-'
+      
+    - name: Set up environment
+      # lol
+      env:
+        GITHUB_TOKEN: ${{ secrets.GITHUB_TOKEN }}
 
     - name: Upload Release Asset
       if: contains(github.ref, 'refs/tags/')
