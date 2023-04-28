@@ -26,7 +26,7 @@ jobs:
       run: pip install -r requirements.txt
       
     - name: Create Tag
-      if: contains(github.ref, 'refs/tags/')
+      if: contains(github.ref, 'releases/')
       run: git tag $release-{{ github.ref }} 'release-'
 
     - name: Upload Release Asset
